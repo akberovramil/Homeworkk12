@@ -11,30 +11,13 @@ public class Book {
         this.yearOfRelease = yearOfRelease;
     }
 
-    @Override
-    public String toString() {
-        return "Book{" +
-                "name='" + name + '\'' +
-                ", author=" + author +
-                ", yearOfRelease=" + yearOfRelease +
-                '}';
-    }
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Book book = (Book) o;
-        return yearOfRelease == book.yearOfRelease && Objects.equals(name, book.name) && Objects.equals(author, book.author);
-    }
-    @Override
-    public int hashCode() {
-        return Objects.hash(name, author, yearOfRelease);
-    }
-
     public String getName() {
         return name;
     }
 
+    public Author getAuthor() {
+        return author;
+    }
 
     public int getYearOfRelease() {
         return this.yearOfRelease;
@@ -43,10 +26,28 @@ public class Book {
     public void setYearOfRelease(int yearOfRelease) {
         this.yearOfRelease = yearOfRelease;
     }
-
-
-
-
+    @Override
+    public String toString() {
+        return "Название книги: " + name + " Автор: " + author.toString() + " Год издания: " + yearOfRelease;
     }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Book book = (Book) o;
+        return yearOfRelease == book.yearOfRelease && Objects.equals(name, book.name) && Objects.equals(author, book.author);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, author, yearOfRelease);
+    }
+
+
+
+
+
+
+}
 
 

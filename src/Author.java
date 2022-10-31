@@ -7,12 +7,17 @@ public class Author {
         this.name = name;
         this.lastName = lastName;
     }
+
     public String getName() {
         return name;
     }
 
     public String getLastName() {
         return this.lastName;
+    }
+    @Override
+    public String toString() {
+        return name + " " + lastName;
     }
 
     @Override
@@ -24,15 +29,9 @@ public class Author {
     }
 
     @Override
-    public String toString() {
-        return "Author{" +
-                "name='" + name + '\'' +
-                ", lastName='" + lastName + '\'' +
-                '}';
-    }
-    @Override
     public int hashCode() {
         return Objects.hash(name, lastName);
     }
+
 }
 
